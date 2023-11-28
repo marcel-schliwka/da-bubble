@@ -1,0 +1,84 @@
+section {
+  height: 100vh;
+  width: 100%;
+}
+
+.login-container {
+  position: absolute;
+  top: 20%;
+  margin: 0 auto;
+  opacity: 0;
+  animation: introLoginContainer 225ms ease-in-out 1.75s forwards;
+  z-index: 5;
+}
+
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  position: relative;
+  height: 100vh;
+  img {
+    clip-path: inset(0% 70% 0% 0%);
+    transform: translateX(30%);
+    animation: introLogo 2s ease-in-out forwards;
+  }
+}
+
+.background-overlay {
+  background: linear-gradient(1deg, #313ae5 1.22%, #797ef3 98.76%);
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  animation: introBg 225ms ease-in-out 1.75s forwards;
+}
+
+@keyframes introLogo {
+  0% {
+    clip-path: inset(0% 70% 0% 0%);
+    transform: translateX(30%);
+  }
+
+  25% {
+    transform: translateX(0);
+  }
+
+  50% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+
+  60% {
+    clip-path: inset(0% 0% 0% 0%);
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateY(-40svh);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes introBg {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes introLoginContainer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
