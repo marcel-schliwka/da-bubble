@@ -1,0 +1,48 @@
+<section *ngIf="step == 1">
+  <a routerLink="/login" class="material-symbols-outlined arrow-left"
+    >arrow_back</a
+  >
+  <h1>Konto erstellen</h1>
+  <p>
+    Mit deinem Namen und deiner E-Mail-Adresse hast du dein neues
+    DABubble-Konto.
+  </p>
+
+  <input type="text" placeholder="Name und Nachname" class="name-input" />
+  <input type="email" placeholder="Your work mail" class="email-input" />
+  <input
+    type="password"
+    placeholder="Your secure password"
+    class="password-input"
+  />
+  <button class="primary-btn continue-btn" (click)="continue()">Weiter</button>
+</section>
+
+<section *ngIf="step == 2">
+  <a (click)="goBack()" class="material-symbols-outlined arrow-left"
+    >arrow_back</a
+  >
+  <h1>Wähle deinen Avatar</h1>
+
+  <div class="images-container">
+    <img
+      src="./assets/avatars/avatar_empty.svg"
+      alt="Empty Profile Picture"
+      class="empty-profile-img"
+    />
+    <h2>Dein Name</h2>
+    <p>Wähle deinen avatar ...</p>
+    <div class="avatar-container">
+      <img
+        *ngFor="let avatarLink of avatarLinks"
+        src="{{ avatarLink }}"
+        alt="Small icon of an avatar"
+      />
+    </div>
+    <p>
+      Oder du kannst
+      <button class="secondary-btn upload-btn">Foto hochladen</button>
+    </p>
+  </div>
+  <button class="primary-btn continue-btn" (click)="continue()">Weiter</button>
+</section>
