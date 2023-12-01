@@ -36,4 +36,4 @@ on:
               TARGET: ${{ secrets.REMOTE_DIR }}
             run: |
               export SSHPASS=${SSH_PASS}
-              sshpass -e rsync -avzr --delete -e "ssh -o StrictHostKeyChecking=no -p ${SSH_PORT}" dist/your-angular-app-folder/ ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
+              sshpass -e rsync -avzr --delete -e "ssh -o StrictHostKeyChecking=no -p ${SSH_PORT}" dist/da-bubble/ ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
