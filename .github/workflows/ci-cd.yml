@@ -6,17 +6,17 @@ on:
       - main
 
       jobs:
-        build-and-deploy:
-          runs-on: ubuntu-latest
+      build-and-deploy:
+        runs-on: ubuntu-latest
 
-          steps:
+        steps:
           - name: Checkout Repository
             uses: actions/checkout@v2
 
           - name: Set up Node.js
-            uses: actions/setup-node@v1
+            uses: actions/setup-node@v4
             with:
-              node-version: '16' # Ersetzen Sie dies mit Ihrer gewünschten Node-Version
+              node-version: "18" # Ersetzen Sie dies mit Ihrer gewünschten Node-Version
 
           - name: Install Dependencies
             run: npm install
