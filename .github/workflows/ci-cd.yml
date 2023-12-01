@@ -27,6 +27,9 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
       - name: Deploy to Server
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
