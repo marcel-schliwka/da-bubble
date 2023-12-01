@@ -1,0 +1,39 @@
+name: Angular CI/CD mit SSH-Passwort
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18' # Stellen Sie sicher, dass Sie Ihre spezifische Node-Version verwenden
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build -- --prod
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to Server
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+          SSH_PORT: 812
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_DIR }}
+        run: |
+          export SSHPASS=${SSH_PASS}
+          sshpass -e rsync -avzr --delete -e "ssh -p ${SSH_PORT}" dist/your-angular-app-folder/ ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
