@@ -1,0 +1,33 @@
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-direction-column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin fonts-styles($fs, $fw) {
+  font-size: $fs;
+  font-style: normal;
+  font-weight: $fw;
+  line-height: 120%;
+}
+
+@mixin animation($name, $duration, $delay, $counting) {
+  animation: $name $duration forwards;
+  animation-delay: $delay;
+  animation-iteration-count: $counting;
+  transition: all $delay ease-in-out;
+}
+
+@mixin flexbox($display, $fdir, $jc, $ai) {
+  //not adding gap, because needs to be changed a lot due to resizing/mobile design
+  display: $display;
+  flex-direction: $fdir;
+  justify-content: $jc;
+  align-items: $ai;
+}

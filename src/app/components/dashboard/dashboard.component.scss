@@ -1,0 +1,37 @@
+@import "../../colors.scss";
+@import "../../mixins.scss";
+
+header {
+  width: 100vw;
+  height: 10vh;
+  background-color: $bg-color;
+  @include flexbox(flex, row, space-between, center);
+  padding-inline: 1rem;
+
+  .logo {
+    width: 40%;
+  }
+  .profile-picture {
+    height: 50%;
+    border-radius: 50%;
+  }
+}
+
+main {
+  margin-top: 1rem;
+  @include flexbox(flex, column, space-between, center);
+
+  div {
+    width: 100%;
+    @include flexbox(flex, row, center, center);
+    input {
+      background-image: url(../../../assets/icons/magnifier.svg);
+      background-repeat: no-repeat;
+      background-position: 95%;
+      background-size: 2rem;
+      background-color: white;
+      border: 1px solid $light-purple-lines;
+      padding-left: 5%;
+    }
+  }
+}
