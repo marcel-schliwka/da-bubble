@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import JoyPixels from '../../node_modules/emoji-toolkit/lib/js/joypixels.min.js';
-import { IntroScreenComponent } from './intro-screen/intro-screen.component.js';
+import { IntroScreenComponent } from './components/auth/intro-screen/intro-screen.component.js';
 
 @Component({
   selector: 'app-root',

@@ -3,7 +3,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrationContentComponent } from './components/auth/login/registration-content/registration-content.component';
 import { LoginContentComponent } from './components/auth/login/login-content/login-content.component';
 import { ForgetPasswordContentComponent } from './components/auth/login/forget-password-content/forget-password-content.component';
-import { IntroScreenComponent } from './intro-screen/intro-screen.component';
+import { IntroScreenComponent } from './components/auth/intro-screen/intro-screen.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const routes: Routes = [
