@@ -9,7 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 export const routes: Routes = [
   {
     path: '',
-    component: IntroScreenComponent,
+    component: DashboardComponent,
     children: [
       { path: '', component: LoginContentComponent },
       { path: 'login', component: LoginContentComponent },

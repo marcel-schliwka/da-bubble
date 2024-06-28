@@ -17,11 +17,11 @@
     <span>ODER</span>
     <hr />
   </div>
-  <button class="login-google-btn">
+  <button class="login-google-btn" (click)="createUser()">
     <img src="./assets/icons/google.svg" alt="" />Anmelden mit Google
   </button>
   <div class="login-btn-container">
-    <button class="primary-btn">Anmelden</button>
+    <button class="primary-btn" (click)="loginUser()">Anmelden</button>
     <button class="secondary-btn">Gäste-Login</button>
   </div>
 </section>

@@ -14,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(enviroment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
+    provideStorage(() => getStorage()), provideFirebaseApp(() => initializeApp({"projectId":"da-bubble-9537c","appId":"1:570485904156:web:59811456a8dc1a8e20a0d9","storageBucket":"da-bubble-9537c.appspot.com","apiKey":"AIzaSyC_F9oHX-Qwn6DPGpaynIrzcSPlbU3Mqew","authDomain":"da-bubble-9537c.firebaseapp.com","messagingSenderId":"570485904156"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()),
   ],
 };
